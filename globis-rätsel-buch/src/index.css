@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fredoka', cursive, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --globi-blue: #1d5cb8;
+    --globi-red: #d92525;
+    --globi-yellow: #f9bc15;
+    --globi-cream: #fffdf5;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #f7f4ea;
+    color: #1c1917;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .font-comic {
+    font-family: var(--font-display);
+  }
+}
+
+/* Classic Globi red & black checkered trousers pattern */
+.bg-globi-checkered {
+  background-color: #d92525;
+  background-image: 
+    linear-gradient(45deg, #111111 25%, transparent 25%), 
+    linear-gradient(-45deg, #111111 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #111111 75%), 
+    linear-gradient(-45deg, transparent 75%, #111111 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+}
+
+.bg-globi-checkered-subtle {
+  background-color: #f12e2e;
+  background-image: 
+    linear-gradient(45deg, #222222 25%, transparent 25%), 
+    linear-gradient(-45deg, #222222 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #222222 75%), 
+    linear-gradient(-45deg, transparent 75%, #222222 75%);
+  background-size: 12px 12px;
+  background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+}
+
+/* Comic ink drop shadows and border rules */
+.comic-box {
+  border: 3px solid #1c1917;
+  box-shadow: 4px 4px 0px #1c1917;
+}
+
+.comic-box-sm {
+  border: 2px solid #1c1917;
+  box-shadow: 2px 2px 0px #1c1917;
+}
+
+.comic-button {
+  border: 3px solid #1c1917;
+  box-shadow: 4px 4px 0px #1c1917;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.comic-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #1c1917;
+}
+
+.comic-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #1c1917;
+}
+
+/* Comic shake animation for wrong answers */
+@keyframes comic-shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20% { transform: translateX(-8px) rotate(-3deg); }
+  40% { transform: translateX(8px) rotate(3deg); }
+  60% { transform: translateX(-6px) rotate(-2deg); }
+  80% { transform: translateX(6px) rotate(2deg); }
+}
+
+.animate-comic-shake {
+  animation: comic-shake 0.4s ease-in-out;
+}
+
+/* Comic bounce for celebration */
+@keyframes comic-pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-comic-pop {
+  animation: comic-pop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Speech bubble tail */
+.speech-bubble {
+  position: relative;
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 28px;
+  border-width: 12px 12px 0;
+  border-style: solid;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+}
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 26px;
+  border-width: 14px 14px 0;
+  border-style: solid;
+  border-color: #1c1917 transparent;
+  display: block;
+  width: 0;
+}

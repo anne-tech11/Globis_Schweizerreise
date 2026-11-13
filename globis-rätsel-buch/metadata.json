@@ -1,0 +1,6 @@
+{
+  "name": "Globis Rätsel-Buch",
+  "description": "Mobile-optimierte Rätsel-Website im Look der klassischen Schweizer Globi-Bücher mit Seitenzahlen, geheimen Codewörtern, Rätsel-Fortschritt und geschütztem Admin-Bereich.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
